@@ -15,7 +15,7 @@
 - **`Top_5_Brands_By_Receipt.sql`**: Identifies the top 5 brands by receipts scanned among users aged 21 and over.
 - **`Top_5_Brands_By_Sale.sql`**: Determines the top 5 brands by sales among users who have had an account for at least six months.
 - **`YoY_Growth.sql`**: Calculates the year-over-year growth percentage of Fetch.
-- **Output folder has the csv file for all the above SQL queries.
+- Output folder has the csv file for all the above SQL queries.
 
 ## Part 3: Communicate with Stakeholders
 

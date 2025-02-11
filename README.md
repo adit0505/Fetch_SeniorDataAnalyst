@@ -20,7 +20,7 @@
 ## Part 3: Communicate with Stakeholders
 
 ### Documentation
-- **Presentation**: Insights and findings are documented in `Communicate with Stakeholders.pdf`.
+- Insights and findings are documented in `Communicate with Stakeholders.pdf`.
 
 ### High-Priority Data Issues & Solutions
 

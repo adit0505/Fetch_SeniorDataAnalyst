@@ -7,6 +7,7 @@
 - **Data Updated Folder**: Contains the updated data files derived from the exploratory analysis.
   - These updated data files were used for SQL analysis.
   - A Google Drive link is provided for all data files (since some files exceed 25 MB).
+  - https://drive.google.com/drive/folders/1adteeeQbMLlqO8QD68Q_4A4aCXNx3v0G?usp=drive_link
 
 ## Part 2: SQL Analysis
 

@@ -1,31 +1,51 @@
-Part 1: Explore the Data
-1. The Python notebooks contain the code for exploratory analysis and some insights related to the data quality
-2. The Data Updated folder contains the updated data files (from above Python exploratrory analysis)
-   	a. These updated data files were used for SQL Analysis
-  	b. Added a Google Drive link as well for all the data files (since some files are > 25 MB)
+# Fetch Data Analysis
 
-Part 2: SQL Analysis
-1. The SQL files contain the code for the analysis
-		a. Top_5_Brands_By_Receipt.sql - What are the top 5 brands by receipts scanned among users 21 and over?
-		b. Top_5_Brands_By_Sale.sql - What are the top 5 brands by sales among users that have had their account for at least six months?
-		c. YoY_Growth.sql - At what percent has Fetch grown year over year?
+## Part 1: Explore the Data
 
-Part 3: Communicate with Stakeholders
-1. Present in the 'Communicate with Stakeholders.pdf'
-2. Some high priority data issues that need to be addressed:
-	1.	Only ~0.5% of users in the Transaction data were mapped to the User data
-			i.	This limits the insights we can generate related to users (age/joining date/demographic)
-			ii.	Needed: Improved mapping of the user data to generate useful user level insights
-	2.	Transaction data with missing Barcodes
-			i.	~10% of transactions do not have a barcode
-			ii.	Needed: Improved mapping of Barcodes to generate product level insights
-	3.	Barcodes in the Transaction and Product data are stored as integers and are of varying length
-			i.	This creates an issue, since any barcode with zero as the first digit(s) might get dropped while being transferred from/to a csv file
-			ii.	Solution: Resolved by converting Barcodes to string and making it a string of length 14
-	4.	Missing Brand and Manufacturer information in Product data
-			i.	~26% of products are missing the brand and manufacturer information
-			ii.	Needed: Get Brand and Manufacturer information for the missing products 
-	5.	In Transaction data, we have some duplicate records where the combination of Receipt ID and Barcode appears more than once. Specifically, in these cases:
-			i.	The Final Sale is missing
-			ii.	The Final Volume is zero
-			iii.	Solution: Resolved by dropping the duplicate rows
+### Data Sources
+- **Python Notebooks**: Contain code for exploratory analysis and insights related to data quality.
+- **Data Updated Folder**: Contains the updated data files derived from the exploratory analysis.
+  - These updated data files were used for SQL analysis.
+  - A Google Drive link is provided for all data files (since some files exceed 25 MB).
+
+## Part 2: SQL Analysis
+
+### SQL Files and Queries
+- **`Top_5_Brands_By_Receipt.sql`**: Identifies the top 5 brands by receipts scanned among users aged 21 and over.
+- **`Top_5_Brands_By_Sale.sql`**: Determines the top 5 brands by sales among users who have had an account for at least six months.
+- **`YoY_Growth.sql`**: Calculates the year-over-year growth percentage of Fetch.
+
+## Part 3: Communicate with Stakeholders
+
+### Documentation
+- **Presentation**: Insights and findings are documented in `Communicate with Stakeholders.pdf`.
+
+### High-Priority Data Issues & Solutions
+
+1. **User Mapping in Transaction Data**
+   - **Issue**: Only ~0.5% of users in the transaction data were mapped to the user data.
+   - **Impact**: Limits insights related to users (age, joining date, demographics).
+   - **Solution Needed**: Improved mapping of user data to generate useful user-level insights.
+
+2. **Transaction Data with Missing Barcodes**
+   - **Issue**: ~10% of transactions lack a barcode.
+   - **Impact**: Limits product-level insights.
+   - **Solution Needed**: Improved barcode mapping.
+
+3. **Barcode Format Issues**
+   - **Issue**: Barcodes in transaction and product data are stored as integers of varying lengths.
+   - **Impact**: Any barcode with leading zeros may get dropped when transferring to/from a CSV file.
+   - **Solution**: Converted barcodes to strings and ensured a fixed length of 14 characters.
+
+4. **Missing Brand and Manufacturer Information**
+   - **Issue**: ~26% of products lack brand and manufacturer details.
+   - **Impact**: Affects product categorization and brand insights.
+   - **Solution Needed**: Acquire missing brand and manufacturer information.
+
+5. **Duplicate Records in Transaction Data**
+   - **Issue**: Some records where the combination of Receipt ID and Barcode appears more than once.
+     - Missing final sale data.
+     - Final volume is zero.
+   - **Solution**: Removed duplicate rows.
+
+---
